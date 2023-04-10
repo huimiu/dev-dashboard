@@ -1,0 +1,28 @@
+{
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "type": "AdaptiveCard",
+    "version": "1.4",
+    "body": [
+        {
+            "type": "Input.Text",
+            "label": "Content",
+            "style": "text",
+            "id": "ContentVal",
+            "isRequired": true,
+            "errorMessage": "Content is required"
+        },
+        {
+            "type": "Input.Text",
+            "label": "Tag",
+            "style": "text",
+            "id": "TagVal"
+        }
+    ],
+    "actions": [
+        {
+            "type": "Action.Submit",
+            "title": "Submit",
+            "verb": "submit"
+        }
+    ]
+}

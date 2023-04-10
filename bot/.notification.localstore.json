@@ -1,0 +1,22 @@
+{
+  "_cf8cf50d-83dd-4225-a262-2abe9e2ae7a7_a:1JYxMehyK6uRNeVVJEZItB0UFY0H3ai098unSulKb6gjkWwVHpfHDUI0xhDYV5LppA6kXCWU1SgiXbcYGrhlem-ZvLD2tFTdrUArPEEKj9Al1zNL3gHhexeNx8fL2m-UL": {
+    "activityId": "1681043443858",
+    "user": {
+      "id": "29:1F-r1i1FgQS5DN0f3KtfD-ICyYHCP8-uG_dBCrGHB8ugSHX_PF11lS-_k0WrHE7KWpnK9GrHQC_l_th1xTQ-PvQ",
+      "name": "hui miao",
+      "aadObjectId": "bc7a9bca-5f00-4cec-904a-217b452b517b"
+    },
+    "bot": {
+      "id": "28:a7e7faa8-b7b6-4c83-9f16-1112420768b8",
+      "name": "dev-dashboard"
+    },
+    "conversation": {
+      "conversationType": "personal",
+      "tenantId": "cf8cf50d-83dd-4225-a262-2abe9e2ae7a7",
+      "id": "a:1JYxMehyK6uRNeVVJEZItB0UFY0H3ai098unSulKb6gjkWwVHpfHDUI0xhDYV5LppA6kXCWU1SgiXbcYGrhlem-ZvLD2tFTdrUArPEEKj9Al1zNL3gHhexeNx8fL2m-UL"
+    },
+    "channelId": "msteams",
+    "locale": "en-US",
+    "serviceUrl": "https://smba.trafficmanager.net/amer/"
+  }
+}

@@ -1,0 +1,16 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+# TeamsFx files
+env/.env.*
+.DS_Store
+build
+.deployment
+.localSettings
+bot/lib
+
+# dependencies
+/node_modules
+tab/node_modules
+bot/node_modules
+
+# testing
+/coverage
