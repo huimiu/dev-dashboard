@@ -13,71 +13,71 @@ import { OpenAI } from "../widgets/OpenAIWidget";
 import { PlannerTask } from "../widgets/PlannerTask";
 
 const scope = [
-    "Tasks.ReadWrite",
-    "Group.ReadWrite.All",
-    "ExternalItem.Read.All",
-    "Files.Read.All",
-    "Sites.Read.All",
-    "Files.ReadWrite.All",
-    "Sites.ReadWrite.All",
-    "User.Read.All",
+  "Tasks.ReadWrite",
+  "Group.ReadWrite.All",
+  "ExternalItem.Read.All",
+  "Files.Read.All",
+  "Sites.Read.All",
+  "Files.ReadWrite.All",
+  "Sites.ReadWrite.All",
+  "User.Read.All",
 ];
 
 export default class SampleDashboard extends Dashboard {
-    protected rowHeights(): string | undefined {
-        return "320px 400px";
-    }
+  protected rowHeights(): string | undefined {
+    return "320px 400px";
+  }
 
-    protected columnWidths(): string | undefined {
-        return "11fr 5fr";
-    }
+  protected columnWidths(): string | undefined {
+    return "11fr 5fr";
+  }
 
-    protected dashboardLayout(): undefined | JSX.Element {
-        return (
-            <>
-                {this.state.showLogin === false ? (
-                    <>
-                        <Image className="img-style" src="bg.png" />
-                        <DevOps />
-                        <PlannerTask />
-                        <OpenAI />
-                        <GithubIssues />
-                    </>
-                ) : (
-                    <div className="spinner-layout">
-                        <Spinner size="huge" />
-                    </div>
-                )}
-            </>
-        );
-    }
+  protected dashboardLayout(): undefined | JSX.Element {
+    return (
+      <>
+        {this.state.showLogin === false ? (
+          <>
+            <Image className="img-style" src="bg.png" />
+            <DevOps />
+            <PlannerTask />
+            <OpenAI />
+            <GithubIssues />
+          </>
+        ) : (
+          <div className="spinner-layout">
+            <Spinner size="huge" />
+          </div>
+        )}
+      </>
+    );
+  }
 
-    async componentDidMount() {
-        super.componentDidMount();
-        if (await this.checkIsConsentNeeded()) {
-            await loginAction(scope);
+  async componentDidMount() {
+    super.componentDidMount();
+    if (await this.checkIsConsentNeeded()) {
+      await loginAction(scope);
+    }
+    this.setState({ showLogin: false });
+  }
+
+  protected customiseDashboardStyle(): CSSProperties | undefined {
+    return this.state.showLogin === false
+      ? {
+          marginTop: "5%",
         }
-        this.setState({ showLogin: false });
-    }
+      : {
+          padding: 0,
+          marginTop: 0,
+        };
+  }
 
-    protected customiseDashboardStyle(): CSSProperties | undefined {
-        return this.state.showLogin === false
-            ? {
-                  marginTop: "5%",
-              }
-            : {
-                  padding: 0,
-                  marginTop: 0,
-              };
+  async checkIsConsentNeeded() {
+    let needConsent = false;
+    try {
+      await TeamsUserCredentialContext.getInstance().getCredential().getToken(scope);
+    } catch (error) {
+      needConsent = true;
     }
-
-    async checkIsConsentNeeded() {
-        let needConsent = false;
-        try {
-            await TeamsUserCredentialContext.getInstance().getCredential().getToken(scope);
-        } catch (error) {
-            needConsent = true;
-        }
-        return needConsent;
-    }
+    return needConsent;
+  }
 }

@@ -2,7 +2,6 @@ import "./App.css";
 
 import { HashRouter as Router, Redirect, Route } from "react-router-dom";
 
-// https://fluentsite.z22.web.core.windows.net/quick-start
 import {
   FluentProvider,
   teamsDarkTheme,
