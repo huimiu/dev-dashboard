@@ -74,18 +74,10 @@ export class DevOps extends Widget<IWorkItemState> {
         {hasWorkItem ? (
           <div className="devops-list-layout">
             <div className="work-items-table-title-layout">
-              <Text key="text-work-item-title" className="work-items-table-title">
-                Title
-              </Text>
-              <Text key="text-work-item-type" className="work-items-table-title">
-                Type
-              </Text>
-              <Text key="text-work-item-assigned" className="work-items-table-title">
-                Assigned To
-              </Text>
-              <Text key="text-work-item-state" className="work-items-table-title">
-                State
-              </Text>
+              <Text key="text-work-item-title">Title</Text>
+              <Text key="text-work-item-type">Type</Text>
+              <Text key="text-work-item-assigned">Assigned To</Text>
+              <Text key="text-work-item-state">State</Text>
             </div>
             <div className="work-items">
               {this.state.devOpsData?.map((item: DevOpsModel, index) => {
@@ -186,21 +178,4 @@ export class DevOps extends Widget<IWorkItemState> {
       });
     }
   }
-
-  private onSearchBtnClick = async () => {
-    if (this.inputRef.current && this.inputRef.current.value.length > 0) {
-      const devOpsData: DevOpsModel[] = [];
-      this.setState({
-        devOpsData: devOpsData,
-        inputFocused: false,
-      });
-      this.inputRef.current.value = "";
-    }
-  };
-
-  private inputFocusedState = () => {
-    this.setState({
-      inputFocused: true,
-    });
-  };
 }
