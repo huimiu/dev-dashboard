@@ -41,7 +41,7 @@
 
 .work-items-table-title-layout {
     display: grid;
-    grid-template-columns: minmax(12rem, 3fr) repeat(3, minmax(4rem, 1fr));
+    grid-template-columns: minmax(12rem, 6fr) minmax(2rem, 1fr) minmax(6rem, 3fr) minmax(4rem, 2fr);
     gap: 0.6rem;
     align-items: center;
     padding-right: 5px;
@@ -67,7 +67,7 @@
 
 .work-item-layout {
     display: grid;
-    grid-template-columns: minmax(12rem, 3fr) repeat(3, minmax(4rem, 1fr));
+    grid-template-columns: minmax(12rem, 6fr) minmax(2rem, 1fr) minmax(6rem, 3fr) minmax(4rem, 2fr);
     gap: 0.6rem;
     height: 2.375rem;
     overflow-x: auto;
@@ -97,7 +97,7 @@
     display: grid;
     gap: 0.25rem;
     align-items: center;
-    grid-template-columns: max-content 3rem;
+    grid-template-columns: max-content 1fr;
 }
 
 .work-item-assigned-state-layout span {
