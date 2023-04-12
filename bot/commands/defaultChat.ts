@@ -31,7 +31,7 @@ export class DefaultChat extends BotCommand {
         authProvider
       );
       const resp = await apiClient.post(
-        "/openai/deployments/hui-gpt-35/completions?api-version=2022-12-01",
+        "/completions?api-version=2022-12-01",
         req
       );
       const response = resp.data.choices[0].text;

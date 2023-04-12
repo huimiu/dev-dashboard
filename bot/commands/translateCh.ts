@@ -13,9 +13,7 @@ export class TranslateCh extends BotCommand {
   async run(userInput: string): Promise<string> {
     try {
       const req = {
-        prompt: `<|im_start|>system\nThe system is an AI assistant that helps people translate Chinese to Enghlish, needs provide professional English translation results and not need to return redundant explanations.\n<|im_end|>\n<|im_start|>user\n"${userInput.slice(
-          6
-        )}"\n<|im_end|>\n<|im_start|>assistant`,
+        prompt: `<|im_start|>system\nThe system is an AI assistant that helps people translate Chinese to Enghlish, needs provide professional English translation results and not need to return redundant explanations.\n<|im_end|>\n<|im_start|>user\n"${userInput.slice(6)}"\n<|im_end|>\n<|im_start|>assistant`,
         max_tokens: 800,
         temperature: 1,
         frequency_penalty: 0,
@@ -33,7 +31,7 @@ export class TranslateCh extends BotCommand {
         authProvider
       );
       const resp = await apiClient.post(
-        "/openai/deployments/hui-gpt-35/completions?api-version=2022-12-01",
+        "/completions?api-version=2022-12-01",
         req
       );
       const response = resp.data.choices[0].text;
