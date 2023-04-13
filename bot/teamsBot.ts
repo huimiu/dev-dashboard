@@ -1,9 +1,5 @@
-import {
-  AdaptiveCardInvokeResponse,
-  AdaptiveCardInvokeValue,
-  TeamsActivityHandler,
-  TurnContext,
-} from "botbuilder";
+import { TeamsActivityHandler, TurnContext } from "botbuilder";
+
 import { CommandsHelper } from "./helpers/commandHelper";
 
 // An empty teams activity handler.
@@ -19,7 +15,6 @@ export class TeamsBot extends TeamsActivityHandler {
         // Remove the line break
         text = removedMentionText.toLowerCase().replace(/\n|\r/g, "").trim();
       }
-      
       const resp = await CommandsHelper.triggerCommand(text);
       await context.sendActivity(resp);
       await next();
