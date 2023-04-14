@@ -130,7 +130,7 @@ export class OpenAI extends Widget<IOpenAIState> {
   private onSendButtonClick = async () => {
     if (this.inputRef.current && this.inputRef.current.value.length > 0) {
       this.setState({ onRequest: true, inputFocused: false, answer: undefined });
-      const answer: string = await textCompletion(this.inputRef.current.value);
+      const answer = await textCompletion(this.inputRef.current.value);
       this.setState({
         answer: answer,
         inputFocused: false,

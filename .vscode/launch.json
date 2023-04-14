@@ -82,6 +82,9 @@
                 "group": "all",
                 "hidden": true
             },
+            "cascadeTerminateToConfigurations": [
+                "Attach to Backend"
+            ],
             "internalConsoleOptions": "neverOpen"
         },
         {
@@ -93,6 +96,9 @@
                 "group": "all",
                 "hidden": true
             },
+            "cascadeTerminateToConfigurations": [
+                "Attach to Backend"
+            ],
             "internalConsoleOptions": "neverOpen"
         },
         {
@@ -144,6 +150,18 @@
             "type": "pwa-node",
             "request": "attach",
             "port": 9239,
+            "restart": true,
+            "presentation": {
+                "group": "all",
+                "hidden": true
+            },
+            "internalConsoleOptions": "neverOpen"
+        },
+        {
+            "name": "Attach to Backend",
+            "type": "node",
+            "request": "attach",
+            "port": 9229,
             "restart": true,
             "presentation": {
                 "group": "all",

@@ -2,7 +2,7 @@ import { ApiKeyProvider, ApiKeyLocation, AxiosInstance, createApiClient } from "
 
 export async function callOai(input: string) {
   const req = {
-    prompt: `<|im_start|>system\nYou are an AI assistant to help users summarize the news content. You need to refine the summarized content and reply in Chinese. The user will provide a news link, and you only need to reply the summarized result.\n<|im_end|>\n<|im_start|>user\n${input}\n<|im_end|>\n<|im_start|>assistant`,
+    prompt: `<|im_start|>system\nYou are an AI assistant that helps people find information.\n<|im_end|>\n<|im_start|>user\n${input}\n<|im_end|>\n<|im_start|>assistant`,
     max_tokens: 800,
     temperature: 1,
     frequency_penalty: 0,
